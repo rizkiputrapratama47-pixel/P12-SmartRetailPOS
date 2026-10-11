@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smart POS Terminal Kasir"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#0F172A" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simulasi Transaksi Pembayaran Kasir Berketahanan Tinggi"
+            android:textSize="13sp"
+            android:textColor="#64748B"
+            android:layout_marginBottom="20dp" />
+
+        <EditText
+            android:id="@+id/etBarcode"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Pindai / Masukkan Barcode (Cth: 8991201)"
+            android:background="@android:drawable/editbox_background"
+            android:paddingHorizontal="12dp"
+            android:textSize="14sp" />
+
+        <RadioGroup
+            android:id="@+id/rgSimulation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <RadioButton
+                android:id="@+id/rbSuccess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Simulasi Transaksi Normal (Berhasil)"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rbBarcodeError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Simulasi Barcode Tidak Ditemukan" />
+
+            <RadioButton
+                android:id="@+id/rbNetworkError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Simulasi Gangguan Jaringan Bank" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btnBayar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="PROSES PEMBAYARAN" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:textColor="#0F172A" />
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
